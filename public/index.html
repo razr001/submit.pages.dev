@@ -9,6 +9,11 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<link rel="icon" type="image/png" href="https://www.cloudflare.com/favicon-128.png">
 		<link rel="stylesheet" href="/index.css">
+		<script>
+			const handleSubmit(){
+				fetch("/api/submit", {method: "POST"})
+			}
+		</script>
 	</head>
 	<body>
 
@@ -21,7 +26,7 @@
 				<p><b>NOTE:</b> On form submission, the API endpoint responds with a JSON representation of the data. There is no JavaScript running in this example.</p>
 			</blockquote>
 
-			<form method="POST" action="/api/submit">
+			<form>
 				<div class="input">
 					<label for="name">Full Name</label>
 					<input id="name" name="name" type="text" />
@@ -66,7 +71,7 @@
 					</ul>
 				</div>
 
-				<button type="submit">Submit</button>
+				<button onclick="handleSubmit">Submit</button>
 			</form>
 		</main>
 
