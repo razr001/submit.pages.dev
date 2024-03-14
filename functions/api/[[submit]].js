@@ -28,8 +28,7 @@ export async function onRequest({ request }) {
 		});
 		console.log(`[LOGGING FROM ${url}, ${JSON.stringify(modifiedRequest.method)}, ${modifiedRequest.body}`)
 
-		const response = await fetch(modifiedRequest);
-		return new Response(await response.text());
+		return await fetch(modifiedRequest);
 	} catch (e) {
 		return new Response(JSON.stringify({ error: e.message }), {
 			status: 500,
