@@ -26,7 +26,7 @@ export async function onRequest({ request }) {
 		const response = await fetch(url);
 		// const results = await gatherResponse(response);
 		// return new Response(results, init);
-		return new Response(response.text());
+		return new Response(await response.text());
 	} catch (e) {
 		return new Response(JSON.stringify({ error: e.message }), {
 			status: 500,
