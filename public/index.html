@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -10,7 +11,8 @@
 		<link rel="icon" type="image/png" href="https://www.cloudflare.com/favicon-128.png">
 		<link rel="stylesheet" href="/index.css">
 		<script>
-			const handleSubmit(){
+			 function handleSubmit(){
+        alert("ffd");
 				fetch("/api/submit", {method: "POST"})
 			}
 		</script>
@@ -71,8 +73,10 @@
 					</ul>
 				</div>
 
-				<button onclick="handleSubmit">Submit</button>
+				
 			</form>
+
+      <button onclick="handleSubmit()">Submit</button>
 		</main>
 
 	</body>
