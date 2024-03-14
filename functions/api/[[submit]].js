@@ -21,7 +21,7 @@ export async function onRequest({ request }) {
 	// return new Response("dddddddddddd")
 
 	try {
-		const url = "https://amd-api.magicaio.com";
+		const url = "https://amd-api.magicaio.com/api/admin/login";
 		const modifiedRequest = new Request(url, { method: "POST", body: { name: "xx", password: "123" } });
 		console.log(`[LOGGING FROM ${request.url}, ${JSON.stringify(modifiedRequest.method)}, ${JSON.stringify(modifiedRequest.body)}`)
 
