@@ -9,7 +9,7 @@ export async function onRequest({ request }) {
 		if (contentType.includes("application/json")) {
 			return JSON.stringify(await response.json());
 		}
-		return response.text();
+		return await response.text();
 	}
 
 	const init = {
@@ -21,8 +21,9 @@ export async function onRequest({ request }) {
 	// return new Response("dddddddddddd")
 
 	try {
-		const url = "https://www.baidu.com";
+		const url = "https://amd-api.magicaio.com";
 		const modifiedRequest = new Request(url, request);
+		console.log(`[LOGGING FROM ${request.url}, ${request.headers}`)
 		const response = await fetch(url);
 		// const results = await gatherResponse(response);
 		// return new Response(results, init);
