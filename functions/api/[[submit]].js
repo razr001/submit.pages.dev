@@ -18,6 +18,8 @@ export async function onRequest({ request }) {
 		},
 	};
 
+	return new Response("dddddddddddd")
+
 	try {
 		const url = "https://amd-api.magicaio.com";
 		const modifiedRequest = new Request(url, request);
