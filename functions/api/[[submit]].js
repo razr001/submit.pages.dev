@@ -23,7 +23,7 @@ export async function onRequest({ request }) {
 	try {
 		const url = "https://amd-api.magicaio.com";
 		const modifiedRequest = new Request(url, request);
-		console.log(`[LOGGING FROM ${request.url}, ${JSON.stringify(request.body)}`)
+		console.log(`[LOGGING FROM ${request.url}, ${JSON.stringify(request.method)}, ${JSON.stringify(request.headers)}`)
 		const response = await fetch(url);
 		// const results = await gatherResponse(response);
 		// return new Response(results, init);
