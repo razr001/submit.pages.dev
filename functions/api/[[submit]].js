@@ -18,14 +18,15 @@ export async function onRequest({ request }) {
 		},
 	};
 
-	return new Response("dddddddddddd")
+	// return new Response("dddddddddddd")
 
 	try {
-		const url = "https://amd-api.magicaio.com";
+		const url = "https://www.baidu.com";
 		const modifiedRequest = new Request(url, request);
-		const response = await fetch(modifiedRequest);
-		const results = await gatherResponse(response);
-		return new Response(results, init);
+		const response = await fetch(url);
+		// const results = await gatherResponse(response);
+		// return new Response(results, init);
+		return new Response(response.text());
 	} catch (e) {
 		return new Response(JSON.stringify({ error: e.message }), {
 			status: 500,
