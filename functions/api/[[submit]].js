@@ -18,9 +18,9 @@ export async function onRequest({ request }) {
 		},
 	};
 
-	const url = "https://amd-api.magicaio.com";
-	const modifiedRequest = new Request(url, request);
 	try {
+		const url = "https://amd-api.magicaio.com";
+		const modifiedRequest = new Request(url, request);
 		const response = await fetch(modifiedRequest);
 		const results = await gatherResponse(response);
 		return new Response(results, init);
