@@ -20,7 +20,15 @@ export async function onRequest({ request }) {
 
 	const url = "https://amd-api.magicaio.com";
 	const modifiedRequest = new Request(url, request);
-	const response  = await fetch(modifiedRequest);
-	const results = await gatherResponse(response);
-	return new Response(results, init);
+	try {
+		const response = await fetch(modifiedRequest);
+		const results = await gatherResponse(response);
+		return new Response(results, init);
+	} catch (e) {
+		return new Response(JSON.stringify({ error: e.message }), {
+			status: 500,
+		});
+	}
+
+
 }
