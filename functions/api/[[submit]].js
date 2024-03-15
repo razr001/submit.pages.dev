@@ -1,7 +1,7 @@
 /**
  * POST /api/submit
  */
-export async function onRequest({ request }) {
+export async function onRequest({ request, env }) {
 	try {
 		const reqUrl = request.url.split("/api")[1]
 		const url = env.API_HOST + reqUrl;
