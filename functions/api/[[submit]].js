@@ -4,7 +4,7 @@
 export async function onRequest({ request }) {
 	try {
 		const reqUrl = request.url.split("/api")[1]
-		const url = API_HOST + reqUrl;
+		const url = env.API_HOST + reqUrl;
 		const modifiedRequest = new Request(url, {
 			method: request.method, body: request.body, headers: request.headers
 		});
